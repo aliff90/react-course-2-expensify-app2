@@ -2,7 +2,6 @@ const path = require('path');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const webpack = require("webpack");
  
-//add below
 process.env.NODE_ENV = process.env.NODE_ENV || "development";
 
 if(process.env.NODE_ENV === "test") {
@@ -47,7 +46,6 @@ module.exports = (env, argv) => {
         new MiniCssExtractPlugin({
             filename: "styles.css"
         }),
-        //add below
         new webpack.DefinePlugin({
           "process.env.FIREBASE_API_KEY": JSON.stringify(process.env.FIREBASE_API_KEY),
           "process.env.FIREBASE_AUTH_DOMAIN": JSON.stringify(process.env.FIREBASE_AUTH_DOMAIN),

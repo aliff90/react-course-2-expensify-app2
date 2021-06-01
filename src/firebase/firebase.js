@@ -1,16 +1,5 @@
 import firebase from "firebase";
 
-// const config = {
-//   apiKey:"AIzaSyBWqrob5TVkjBWklb4MKz8cjUwHxBSmRwg",
-//   apiKey: "AIzaSyBWqrob5TVkjBWklb4MKz8cjUwHxBSmRwg",
-//   authDomain: "expensify-8b56d.firebaseapp.com",
-//   databaseURL: "https://expensify-8b56d-default-rtdb.asia-southeast1.firebasedatabase.app",
-//   projectId: "expensify-8b56d",
-//   storageBucket: "expensify-8b56d.appspot.com",
-//   messagingSenderId: "841941297752",
-//   appId: "1:841941297752:web:4ba69c6c9bb3d6f368b82d"
-// };
-
 const config = {
     apiKey: process.env.FIREBASE_API_KEY,
     authDomain: process.env.FIREBASE_AUTH_DOMAIN,
@@ -25,7 +14,6 @@ firebase.initializeApp(config);
 
 const database = firebase.database();
 
-//lec 152-export below
 export { firebase, database as default };
 
 

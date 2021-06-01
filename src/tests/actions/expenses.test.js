@@ -2,7 +2,7 @@ import configureMockStore from "redux-mock-store";
 import thunk from "redux-thunk";
 import { startAddExpense, addExpense, editExpense, removeExpense } from "../../actions/expenses";
 import expenses from "../fixtures/expenses";
-import database from "../..//firebase/firebase";
+import database from "../../firebase/firebase";
 
 const createMockStore = configureMockStore([thunk]);
 

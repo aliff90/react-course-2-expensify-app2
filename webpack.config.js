@@ -30,7 +30,8 @@ module.exports = (env, argv) => {
             {
                 loader: "css-loader",
                 options: {
-                    sourceMap: true
+                    sourceMap: true,
+                    url: false
                 }
             },
             {
@@ -54,7 +55,8 @@ module.exports = (env, argv) => {
           "process.env.FIREBASE_STORAGE_BUCKET": JSON.stringify(process.env.FIREBASE_STORAGE_BUCKET),
           "process.env.FIREBASE_MESSAGING_SENDER_ID": JSON.stringify(process.env.FIREBASE_MESSAGING_SENDER_ID),
           "process.env.FIREBASE_MESSAGING_APP_ID": JSON.stringify(process.env.FIREBASE_MESSAGING_APP_ID)
-      })
+      }),
+      new webpack.ContextReplacementPlugin(/moment[/\\]locale$/, /ja|it/)
     ],
     devtool: isProduction ? 'source-map' : 'eval-cheap-module-source-map',
     devServer: {
